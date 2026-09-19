@@ -1,27 +1,43 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { AWARD_CATEGORIES } from '../../data/categories';
-import { AwardCategory } from '../../data/types';
-import { ChevronRight, Award, Shield, CheckCircle2, Star, Sparkles } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { AWARD_CATEGORIES } from "../../data/categories";
+import { AwardCategory } from "../../data/types";
+import {
+  ChevronRight,
+  Award,
+  Shield,
+  CheckCircle2,
+  Star,
+  Sparkles,
+} from "lucide-react";
 
 export const CategoryExplorer: React.FC = () => {
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(AWARD_CATEGORIES[0].id);
-  const [selectedSubcategoryId, setSelectedSubcategoryId] = useState<string>('male-footballer');
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
+    AWARD_CATEGORIES[0].id,
+  );
+  const [selectedSubcategoryId, setSelectedSubcategoryId] =
+    useState<string>("male-footballer");
 
   const selectedCategory: AwardCategory =
-    AWARD_CATEGORIES.find((c) => c.id === selectedCategoryId) || AWARD_CATEGORIES[0];
+    AWARD_CATEGORIES.find((c) => c.id === selectedCategoryId) ||
+    AWARD_CATEGORIES[0];
 
   // If Sport Sector, determine which subcategory criteria to show
-  const activeSubcategory = selectedCategory.subcategories?.find(
-    (s) => s.id === selectedSubcategoryId
-  ) || selectedCategory.subcategories?.[0];
+  const activeSubcategory =
+    selectedCategory.subcategories?.find(
+      (s) => s.id === selectedSubcategoryId,
+    ) || selectedCategory.subcategories?.[0];
 
-  const criteriaToShow = activeSubcategory ? activeSubcategory.criteria : selectedCategory.criteria;
+  const criteriaToShow = activeSubcategory
+    ? activeSubcategory.criteria
+    : selectedCategory.criteria;
 
   return (
-    <section id="categories" className="py-20 lg:py-28 bg-[#FAF9F5] border-b border-[#D9D3C8]/70">
+    <section
+      id="categories"
+      className="py-20 lg:py-28 bg-[#FAF9F5] border-b border-[#D9D3C8]/70"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="max-w-3xl mb-14 text-left">
           <div className="flex items-center gap-3 mb-4">
@@ -36,13 +52,14 @@ export const CategoryExplorer: React.FC = () => {
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-[#4A3528] font-display italic leading-relaxed">
-            Eight official competitive sectors reflecting leadership, service, entrepreneurship, and cultural stewardship across the Kambata community.
+            Eight official competitive sectors reflecting leadership, service,
+            entrepreneurship, and cultural stewardship across the Kambata
+            community.
           </p>
         </div>
 
         {/* Desktop Split-Screen Explorer / Mobile Responsive Stack */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
           {/* LEFT: Category Navigation List (5 cols) */}
           <div className="lg:col-span-5 space-y-2.5">
             <div className="p-3 bg-white border border-[#D9D3C8] rounded-xl mb-4">
@@ -59,20 +76,25 @@ export const CategoryExplorer: React.FC = () => {
                   id={`category-tab-${category.code}`}
                   onClick={() => {
                     setSelectedCategoryId(category.id);
-                    if (category.subcategories && category.subcategories.length > 0) {
+                    if (
+                      category.subcategories &&
+                      category.subcategories.length > 0
+                    ) {
                       setSelectedSubcategoryId(category.subcategories[0].id);
                     }
                   }}
                   className={`w-full text-left p-4.5 rounded-xl border transition-all duration-200 flex items-center justify-between group ${
                     isSelected
-                      ? 'bg-[#6F1D2E] text-white border-[#6F1D2E] shadow-sm'
-                      : 'bg-white text-[#1D1D1B] border-[#D9D3C8] hover:border-[#B08A45] hover:bg-[#FAF9F5]'
+                      ? "bg-[#6F1D2E] text-white border-[#6F1D2E] shadow-sm"
+                      : "bg-white text-[#1D1D1B] border-[#D9D3C8] hover:border-[#B08A45] hover:bg-[#FAF9F5]"
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <span
                       className={`font-serif text-lg font-bold tracking-tight ${
-                        isSelected ? 'text-[#E9E3D8]' : 'text-[#6F1D2E] group-hover:text-[#B08A45]'
+                        isSelected
+                          ? "text-[#E9E3D8]"
+                          : "text-[#6F1D2E] group-hover:text-[#B08A45]"
                       }`}
                     >
                       {category.code}
@@ -80,14 +102,14 @@ export const CategoryExplorer: React.FC = () => {
                     <div>
                       <h3
                         className={`text-sm sm:text-base font-semibold leading-snug font-serif ${
-                          isSelected ? 'text-white' : 'text-[#1D1D1B]'
+                          isSelected ? "text-white" : "text-[#1D1D1B]"
                         }`}
                       >
                         {category.name}
                       </h3>
                       <span
                         className={`text-[11px] block mt-0.5 ${
-                          isSelected ? 'text-white/80' : 'text-[#4A3528]/70'
+                          isSelected ? "text-white/80" : "text-[#4A3528]/70"
                         }`}
                       >
                         {category.sector}
@@ -97,7 +119,9 @@ export const CategoryExplorer: React.FC = () => {
 
                   <ChevronRight
                     className={`w-4 h-4 transition-transform ${
-                      isSelected ? 'text-[#E9E3D8] translate-x-1' : 'text-[#D9D3C8] group-hover:text-[#B08A45]'
+                      isSelected
+                        ? "text-[#E9E3D8] translate-x-1"
+                        : "text-[#D9D3C8] group-hover:text-[#B08A45]"
                     }`}
                   />
                 </button>
@@ -109,11 +133,11 @@ export const CategoryExplorer: React.FC = () => {
           <div className="lg:col-span-7">
             <AnimatePresence mode="wait">
               <motion.div
-                key={selectedCategory.id + (activeSubcategory?.id || '')}
+                key={selectedCategory.id + (activeSubcategory?.id || "")}
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
                 className="bg-white border border-[#D9D3C8] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgba(74,53,40,0.04)] text-left space-y-7"
               >
                 {/* Category Header */}
@@ -159,8 +183,8 @@ export const CategoryExplorer: React.FC = () => {
                           onClick={() => setSelectedSubcategoryId(sub.id)}
                           className={`px-3 py-2 text-xs font-semibold rounded-md border text-center transition-all ${
                             selectedSubcategoryId === sub.id
-                              ? 'bg-[#6F1D2E] text-white border-[#6F1D2E]'
-                              : 'bg-white text-[#1D1D1B] border-[#D9D3C8] hover:border-[#B08A45]'
+                              ? "bg-[#6F1D2E] text-white border-[#6F1D2E]"
+                              : "bg-white text-[#1D1D1B] border-[#D9D3C8] hover:border-[#B08A45]"
                           }`}
                         >
                           {sub.name}
@@ -180,7 +204,7 @@ export const CategoryExplorer: React.FC = () => {
                       </h4>
                     </div>
                     <span className="text-xs font-mono font-bold text-[#6F1D2E]">
-                      Total: 100%
+                      Total: 80%
                     </span>
                   </div>
 
@@ -249,15 +273,14 @@ export const CategoryExplorer: React.FC = () => {
                     <CheckCircle2 className="w-4 h-4 text-[#536B55]" />
                     <span>Official Masala Award Committee Standard</span>
                   </div>
-                  <span className="font-mono text-[11px] text-[#B08A45]">2026 Edition</span>
+                  <span className="font-mono text-[11px] text-[#B08A45]">
+                    2026 Edition
+                  </span>
                 </div>
-
               </motion.div>
             </AnimatePresence>
           </div>
-
         </div>
-
       </div>
     </section>
   );
