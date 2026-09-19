@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="sunGoldDark" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#E58B00"/>
+      <stop offset="50%" stop-color="#F7A81B"/>
+      <stop offset="100%" stop-color="#FFBE33"/>
+    </linearGradient>
+    <linearGradient id="mountainGreenDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E8B2C"/>
+      <stop offset="60%" stop-color="#167323"/>
+      <stop offset="100%" stop-color="#0E5218"/>
+    </linearGradient>
+    <linearGradient id="textGreenDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1C852A"/>
+      <stop offset="100%" stop-color="#12611C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 11 Sun Rays Radiating outward -->
+  <polygon points="500,70 493,170 507,170" fill="url(#sunGoldDark)"/>
+  <polygon points="445,85 448,180 461,173" fill="url(#sunGoldDark)"/>
+  <polygon points="395,115 407,200 419,189" fill="url(#sunGoldDark)"/>
+  <polygon points="355,160 375,230 384,217" fill="url(#sunGoldDark)"/>
+  <polygon points="330,215 356,270 363,254" fill="url(#sunGoldDark)"/>
+  <polygon points="318,278 348,318 352,301" fill="url(#sunGoldDark)"/>
+  
+  <polygon points="555,85 539,173 552,180" fill="url(#sunGoldDark)"/>
+  <polygon points="605,115 581,189 593,200" fill="url(#sunGoldDark)"/>
+  <polygon points="645,160 616,217 625,230" fill="url(#sunGoldDark)"/>
+  <polygon points="670,215 637,254 644,270" fill="url(#sunGoldDark)"/>
+  <polygon points="682,278 648,301 652,318" fill="url(#sunGoldDark)"/>
+
+  <!-- Sun Arch (Crescent disk) -->
+  <path d="M 335,280 C 345,180 415,120 500,120 C 585,120 655,180 665,280 C 635,225 575,185 500,185 C 425,185 365,225 335,280 Z" fill="url(#sunGoldDark)"/>
+
+  <!-- Mount Ambericho / Rolling Mountains -->
+  <path d="M 80,395 C 140,375 220,335 340,290 C 385,275 435,335 480,335 C 520,290 560,265 615,290 C 670,315 700,365 770,380 C 840,395 890,410 920,425 C 860,405 770,380 680,375 C 570,385 480,440 370,440 C 240,440 150,405 80,395 Z" fill="url(#mountainGreenDark)"/>
+
+  <!-- Highlight ridge line -->
+  <path d="M 85,395 C 180,350 280,315 340,290 C 390,275 435,325 480,328 C 525,295 565,270 615,290 C 670,310 710,360 780,378 C 850,395 895,412 920,425" stroke="#34D350" stroke-width="3" fill="none" opacity="0.7"/>
+
+  <!-- Valley contour / path trail -->
+  <path d="M 280,425 C 370,410 460,365 540,355 C 580,350 630,370 700,390" stroke="#061F0A" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+  <!-- Pine tree on mountain slope -->
+  <g transform="translate(235, 235) scale(0.65)">
+    <rect x="23" y="100" width="4" height="35" fill="#167323"/>
+    <polygon points="25,10 5,60 18,60 2,90 20,90 0,115 50,115 30,90 48,90 32,60 45,60" fill="#25C93C"/>
+    <polygon points="25,15 10,58 20,58 7,86 22,86 5,110 45,110 28,86 43,86 30,58 40,58" fill="#1EB533"/>
+  </g>
+
+  <!-- 3 Hikers climbing mountain ridge -->
+  <g transform="translate(180, 310) scale(0.48)" fill="#2CE045">
+    <circle cx="20" cy="15" r="5"/>
+    <path d="M 17,21 L 24,36 L 20,58 L 26,60 L 28,40 L 32,56 L 38,54 L 32,32 L 27,21 Z"/>
+    <path d="M 12,24 C 9,25 9,35 13,38 L 17,35 L 15,25 Z"/>
+    <line x1="28" y1="22" x2="35" y2="60" stroke="#2CE045" stroke-width="2.5"/>
+  </g>
+  <g transform="translate(142, 325) scale(0.46)" fill="#2CE045">
+    <circle cx="20" cy="15" r="5"/>
+    <path d="M 17,21 L 23,35 L 19,56 L 25,58 L 27,39 L 30,54 L 36,52 L 31,31 L 26,21 Z"/>
+    <path d="M 12,24 C 9,25 9,35 13,38 L 17,35 L 15,25 Z"/>
+    <line x1="27" y1="22" x2="34" y2="58" stroke="#2CE045" stroke-width="2.5"/>
+  </g>
+  <g transform="translate(105, 340) scale(0.44)" fill="#2CE045">
+    <circle cx="20" cy="15" r="5"/>
+    <path d="M 17,21 L 23,35 L 19,56 L 25,58 L 27,39 L 30,54 L 36,52 L 31,31 L 26,21 Z"/>
+    <path d="M 12,24 C 9,25 9,35 13,38 L 17,35 L 15,25 Z"/>
+    <line x1="27" y1="22" x2="34" y2="58" stroke="#2CE045" stroke-width="2.5"/>
+  </g>
+
+  <!-- "VISIT KEMBATA" Typography -->
+  <text x="500" y="540" text-anchor="middle" font-family="'Plus Jakarta Sans', -apple-system, system-ui, sans-serif" font-weight="900" font-size="94" letter-spacing="6" fill="url(#textGreenDark)">
+    VISIT KEMBATA
+  </text>
+</svg>

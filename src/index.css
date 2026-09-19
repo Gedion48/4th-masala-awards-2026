@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #FAF9F5;
+    --color-charcoal: #1D1D1B;
+    --color-burgundy: #6F1D2E;
+    --color-earth: #4A3528;
+    --color-green: #536B55;
+    --color-gold: #B08A45;
+    --color-beige: #E9E3D8;
+    --color-border: #D9D3C8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #FAF9F5;
+    color: #1D1D1B;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Cultural text selection styling */
+  ::selection {
+    background-color: #6F1D2E;
+    color: #FFFFFF;
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Authentic subtle geometric textile border line */
+.tibeb-border {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #6F1D2E 0px,
+    #6F1D2E 8px,
+    #B08A45 8px,
+    #B08A45 16px,
+    #536B55 16px,
+    #536B55 24px,
+    #FAF9F5 24px,
+    #FAF9F5 30px
+  );
+  height: 3px;
+}
+
+.tibeb-border-gold {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #B08A45 0px,
+    #B08A45 10px,
+    transparent 10px,
+    transparent 14px,
+    #6F1D2E 14px,
+    #6F1D2E 24px,
+    transparent 24px,
+    transparent 28px
+  );
+  height: 2px;
+}
+
+/* Ceremony Projection Screen specific styles */
+@media screen and (min-width: 1920px) {
+  .ceremony-display {
+    font-size: 1.15rem;
+  }
+}

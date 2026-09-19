@@ -1,0 +1,6 @@
+{
+  "name": "4th Masala Awards 2026",
+  "description": "Official website of the 4th Masala Awards 2026. Celebrating Contribution, Service & Excellence in the Kambata Community. Organized by Visit Kambata Tour & Event Organization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
